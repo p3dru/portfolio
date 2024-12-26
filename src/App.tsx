@@ -13,11 +13,11 @@ const App: React.FC = () => {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/works" element={<Works />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="/portfolio" element={<Home />} />
+          <Route path="/portfolio/works" element={<Works />} />
+          <Route path="/portfolio/about" element={<About />} />
+          <Route path="/portfolio/contact" element={<Contact />} />
+          <Route path="/portfolio/project/:id" element={<ProjectDetail />} />
         </Routes>
       </Layout>
     </Router>

@@ -87,17 +87,17 @@ const Home: React.FC = () => {
       <section ref={sectionRefs[2]} className="explore section" data-snap-point>
         <h2>Explore Mais</h2>
         <div className="explore-grid">
-          <Link to="/works" className="explore-item">
+          <Link to="/portfolio/works" className="explore-item">
             <h3>Trabalhos</h3>
             <p>Descubra meus últimos trabalhos e colaborações</p>
             <span>Ver Projetos →</span>
           </Link>
-          <Link to="/about" className="explore-item">
+          <Link to="/portfolio/about" className="explore-item">
             <h3>Sobre</h3>
             <p>Leia mais sobre mim e minhas habilidades</p>
             <span>Leia Mais →</span>
           </Link>
-          <Link to="/contact" className="explore-item">
+          <Link to="/portfolio/contact" className="explore-item">
             <h3>Contato</h3>
             <p>Entre em contato para colaborações, dúvidas ou bater aquele papo construtivo</p>
             <span>Fique à vontade →</span>

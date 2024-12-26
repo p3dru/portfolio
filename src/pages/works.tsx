@@ -24,7 +24,7 @@ const Works: React.FC = () => {
         transition={{delay:0.6}}>
         <div className="works-grid">
           {works.map((work, index) => (    
-            <Link key={work.id} to={`/project/${work.id}`} className="work-item" style={{animationDelay: `${index * 0.1}s`}}>
+            <Link key={work.id} to={`/portfolio/project/${work.id}`} className="work-item" style={{animationDelay: `${index * 0.1}s`}}>
               <div className="work-image">
                 <img src={`/placeholder.svg?height=400&width=600`} alt={work.title} />
               </div>

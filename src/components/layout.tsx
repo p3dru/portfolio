@@ -14,13 +14,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="layout">
       <header className="header">
         <nav className="nav">
-          <Link to="/" className="logo">
+          <Link to="/portfolio" className="logo">
             <img src={logo} alt="Logo da Empresa" width="80" height="auto"/>
           </Link>
           <ul className="nav-links">
-            <li><Link to="/works" className="button-56">Trabalhos</Link></li>
-            <li><Link to="/about" className="button-56">Sobre</Link></li>
-            <li><Link to="/contact" className="button-56">Contato</Link></li>
+            <li><Link to="/portfolio/works" className="button-56">Trabalhos</Link></li>
+            <li><Link to="/portfolio/about" className="button-56">Sobre</Link></li>
+            <li><Link to="/portfolio/contact" className="button-56">Contato</Link></li>
           </ul>
         </nav>
       </header>
