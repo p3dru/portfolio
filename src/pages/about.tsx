@@ -102,7 +102,7 @@ const About: React.FC = () => {
                 <li><strong>Frontend Development</strong> (React, Next.js, TypeScript, Bootstrap, EJS, HTML5, CSS3)</li>
                 <li><strong>Backend Development</strong> (FastAPI, Django, Node.js, Express, NestJS)</li>
                 <li><strong>APIs</strong> (REST APIs, GraphQL)</li>
-                <li><strong>Machine Learning & Visão Computacional</strong> (Tensorflow, Keras, YOLO)</li>
+                <li><strong>Machine Learning & Visão Computacional</strong> (Tensorflow, Keras, YOLO, Orange)</li>
                 <li><strong>Bancos de Dados</strong> (PostgreSQL, MySQL, MongoDB)</li>
                 <li><strong>Testes & Documentaçãoes</strong> (Swagger, Jest)</li>
                 <li><strong>Controle de Versão</strong> (Git, GitHub)</li>
