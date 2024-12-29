@@ -64,7 +64,7 @@ const Home: React.FC = () => {
           <div className="skill-item wide">
             <h3>Fullstack</h3>
             <p>
-             FastAPI | NestJS | React | JWT | PostgreSQL | TypeORM
+             FastAPI | NestJS | React | JWT | PostgreSQL | TypeORM | SQLAlchemy
             </p>
           </div>
           <div className="skill-item">
