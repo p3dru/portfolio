@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import linkedin from '../assets/OIP (1).jpg';
 import github from '../assets/logo-2582757_640.png';
@@ -10,6 +10,26 @@ interface LayoutProps {
 
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth > 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="layout">
       <header className="header">
@@ -17,11 +37,25 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <Link to="/portfolio" className="logo">
             <img src={logo} alt="Logo da Empresa" width="80" height="auto"/>
           </Link>
-          <ul className="nav-links">
-            <li><Link to="/portfolio/works" className="button-56">Trabalhos</Link></li>
-            <li><Link to="/portfolio/about" className="button-56">Sobre</Link></li>
-            <li><Link to="/portfolio/contact" className="button-56">Contato</Link></li>
-          </ul>
+          {isMobile ? (
+            <>
+              <button className='menu-toggle' onClick={toggleMenu}>
+                {isMenuOpen ? 'Close' : 'Menu'}
+              </button>
+              <ul className="nav-links">
+                <li><Link to="/portfolio/works" className="button-56">Trabalhos</Link></li>
+                <li><Link to="/portfolio/about" className="button-56">Sobre</Link></li>
+                <li><Link to="/portfolio/contact" className="button-56">Contato</Link></li>
+              </ul>
+            </>
+          ) : (
+            <ul className="nav-links">
+              <li><Link to="/portfolio/works" className="button-56">Trabalhos</Link></li>
+              <li><Link to="/portfolio/about" className="button-56">Sobre</Link></li>
+              <li><Link to="/portfolio/contact" className="button-56">Contato</Link></li>
+            </ul>
+          )}
+          
         </nav>
       </header>
       

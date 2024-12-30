@@ -2,6 +2,41 @@ import React from 'react';
 import {motion} from 'framer-motion';
 
 const About: React.FC = () => {
+  /*
+  const sectionRefs = [useRef<HTMLElement>(null), useRef<HTMLElement>(null)]
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sectionRefs.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      sectionRefs.forEach((ref) => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, [sectionRefs]);
+  */
   return (
     <div className="about fade-in">
       <motion.h1
@@ -11,48 +46,41 @@ const About: React.FC = () => {
         Sobre Mim
       </motion.h1>
       <div className='about-grid'>
-        <div className='about-item wide'>
-          <motion.div
-          initial={{opacity: 0, y: 20}}
-          animate={{opacity: 1, y: 0}}
-          transition={{delay: 0.2}}>
-            <p className="text-lg text-neutral-600 mb-6">
-              Sou uma pessoa que preza pelo aprendizado, experiências e novas descobertas. 
-              Sou facilmente sociável e tento desenvolver minhas habilidades a cada nova oportunidade.
-              Gosto de participar de todo o período de criação de uma solução, passando pela sua idealização,
-              desenvolvimento até sua entrega. Apesar desse gosto, também não tenho problemas em participar de 
-              projetos em andamento, sou facilmente adaptável a mudanças
-              e também busco sempre entregar o que me comprometo a fazer.
-            </p>
+          <div className='about-item extra-wide'>
+            <motion.div
+            initial={{opacity: 0, y: 20}}
+            animate={{opacity: 1, y: 0}}
+            transition={{delay: 0.2}}>
+              <p className="text-lg text-neutral-600 mb-6">
+              Sou uma pessoa que valoriza o aprendizado, experiências e novas 
+              descobertas. Tenho facilidade em me socializar e busco desenvolver 
+              minhas habilidades a cada nova oportunidade. Gosto de participar de 
+              todo o processo de criação de uma solução, desde sua idealização até a entrega. 
+              Além disso, me adapto facilmente a projetos em andamento, sou flexível a mudanças
+              e sempre busco cumprir meus compromissos com responsabilidade.
+              </p>
 
-            <p className="text-lg text-neutral-600 mb-6">
-            Com experiência em construir aplicações completas do zero, vejo cada 
-            etapa como parte de uma jornada para entregar uma experiência que una 
-            design, funcionalidade e escalabilidade. Tenho facilidade em transformar 
-            conceitos de design em interfaces interativas, responsivas e atraentes - React,
-            CSS e JS/TS tornam isso possível e visualmente satisfatório.
-            </p>
-            
-            <p className="text-lg text-neutral-600 mb-6">
-            No backend, meu gosto pelo desenvolvimento se traduz na criação e otimização
-            de lógicas com ferramentas como FastAPI, TypeORM e PostgreSQL, sempre focando
-            em boas práticas de segurança e escalabilidade.
-            </p>
+              <p className="text-lg text-neutral-600 mb-6">
+              Minha experiência inclui a construção de aplicações completas, encarando cada etapa 
+              como parte de uma jornada para oferecer uma solução que combine design, funcionalidade 
+              e escalabilidade. Tenho facilidade em transformar conceitos em interfaces interativas, 
+              responsivas e atrativas. No desenvolvimento backend, foco na criação e otimização de lógicas, 
+              sempre atento às boas práticas de segurança e escalabilidade. Além disso, a Inteligência Artificial 
+              atiça bastante a minha curiosidade e apesar de ter criado alguns projetos que integram modelos avançados 
+              como Inception, ResNet50 e outras Redes Neurais Convolucionais próprias, reconheço que ainda há muito o 
+              que se aprender. Por isso, procuro expandir meu conhecimento através da leitura de documentações, cursos online e 
+              especialmente: praticando.
+              </p>
 
-            <p className="text-lg text-neutral-600 mb-6">
-            Além disso, a Inteligência Artificial ocupa um papel especial no meu trabalho e ativa
-            bastante minha curiosidade. Utilizo ferramentas como Tensorfolow, Roboflow e YOLO para
-            preparar dataset, criar e treinar modelos robustos para classificação e segmentação de
-            imagens, integrando modelos diretamente em sistemas para resolver problemas reais. 
-            </p>
-
-            <p className="text-lg text-neutral-600 mb-6">
-            Quando não estou codando, com quase toda certeza, estarei praticando algum exercício físico,
-            desenhando ou pintando, jogando algum videogame ou aprendendo algo relacionado à programação, ciências sociais ou 
-            ainda me debruçando sobre a lore de algum jogo que me marcou.
-            </p>
-          </motion.div>
-        </div>
+              <p className="text-lg text-neutral-600 mb-6">
+              Quando não estou codando, com quase toda certeza, estarei praticando algum exercício físico,
+              desenhando ou pintando, jogando algum videogame ou aprendendo algo relacionado à programação, ciências sociais ou 
+              ainda me debruçando sobre a lore de algum jogo que me marcou.
+              </p>
+            </motion.div>
+          </div>
+        
+        {/*
         <div className='about-item'>
           <motion.div
           initial={{opacity: 0, y: 20}}
@@ -61,7 +89,7 @@ const About: React.FC = () => {
             <></>
           </motion.div>
         </div>
-
+        */}
         <div className='about-item'>
           <motion.div
             initial={{opacity: 0, y: 20}}
