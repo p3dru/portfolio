@@ -10,7 +10,10 @@
 9. Project Detail Page
 10. Mobile menu styles
 11. Animations
+12. Responsive Design
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Italianno&family=Julius+Sans+One&family=Syne+Mono&display=swap');
 
 /* 1. Global Styles */
 :root {
@@ -30,6 +33,10 @@
     color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.6;
+    /*For better responsiveness*/
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -39,6 +46,31 @@
   a {
     color: var(--primary-color);
     text-decoration: none;
+  }
+
+  .italianno-regular {
+    font-family: "Italianno", serif;
+    font-weight: 800;
+    font-style: inherit;
+    font-size: 90px;
+  }  
+
+  .great-vibes-regular {
+    font-family: "Great Vibes", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .julius-sans-one-regular {
+    font-family: "Julius Sans One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .syne-mono-regular {
+    font-family: "Syne Mono", serif;
+    font-weight: 400;
+    font-style: normal;
   }
 
  /* <!-- HTML !-->
@@ -112,6 +144,8 @@
   .main-content {
     flex: 1;
     padding-bottom: 60px;
+    /*Added for better spacing on mobile*/
+    /*padding-top: 60px;*/
   }
   
   /* 3. Header */
@@ -215,16 +249,34 @@
   
   .hero {
     background-color: var(--primary-color);
+    background-image: url('../assets/tentativa3.png');
     color: #fff;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    grid-template-areas: "hero-content hero-image";
+    gap: 8rem;
     align-items: center;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr; /* Empilha as colunas em uma única coluna */
+      grid-template-areas: 
+        "hero-content"
+        "hero-image"; /* A imagem vai para baixo */
+      gap: 2rem; /* Reduz o espaçamento entre os itens */
+      padding-left: 2rem; /* Ajuste do padding para telas menores */
+      padding-right: 2rem; /* Ajuste do padding para telas menores */
+    }
   }
   
   .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    grid-area: start;
   }
   
   .hero-image img {
@@ -234,6 +286,7 @@
     height: 50vh;
     background-size: cover;
     background-position: center;
+    grid-area: end;
   }
   
   .skills-grid {
@@ -248,11 +301,6 @@
     border-radius: 10px;
   }
   */
-
-  .skill-item.wide {
-    grid-column: span 2;
-  }
-  
 
   .skill-item {
     display: flex;
@@ -298,6 +346,19 @@
     outline: 0;
   }
 
+  .skill-item.wide{
+    grid-column: span 3;
+    width: 100%;
+    height: 100%; 
+    padding: 0rem;
+  }
+
+  .line-animation {
+    width: '100vw';
+    height: '100vh';
+  }
+  
+
   .explore-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -341,8 +402,6 @@
   .explore-item:hover{
     background-color: var(--tertiary-color);
   }
-
-
 
   .explore-item:active{
     background-color: var(--tertiary-color);
@@ -410,6 +469,10 @@
   .work-image img {
     width: 100%;
     height: auto;
+  }
+
+  .promise{
+    cursor: not-allowed;
   }
   
   /* 7. About Page */
@@ -640,11 +703,6 @@
     padding: 8rem 2rem 2rem;
   }
   
-  .back-link {
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-  
   .project-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -672,7 +730,7 @@
     border-radius: 4px;
   }
   
-  .project-link {
+  .project-link, .back-link {
     align-items: center;
     background-color: var(--primary-color);
     color: #fff;
@@ -685,7 +743,7 @@
     height: 40px;
     justify-content: center;
     line-height: 24px;
-    max-width: 40%;
+    max-width: 20%;
     padding: 0 25px;
     position: relative;
     text-align: center;
@@ -695,6 +753,19 @@
     touch-action: manipulation;
     cursor: pointer;
   }
+
+  .back-link {
+    display: inline-block;
+    max-width: 10%;
+    max-height: 10%;
+    padding-top: 1%;
+  }
+
+  .back-link:hover {
+    background-color: var(--tertiary-color);
+    color: #111;
+  }
+  
 
   .project-link:after {
     background-color: #111;
@@ -729,6 +800,7 @@
     display: grid;
     grid-template-columns: repeat(2, 4fr);
     gap: 2rem;
+    padding: 1rem 2rem 2rem;
   }
 
   .project-item {
@@ -773,18 +845,18 @@
   /*10. Mobile menu styles*/
   .menu-toggle{
     display: none;
-  }
-
-  @media (max-width: 767px){
-    .menu-toggle{
-      display: block;
     background: none;
     border: none;
     font-size: 1rem;
     cursor: pointer;
+  }
+
+  @media (max-width: 768px){
+    .menu-toggle{
+      display: block;
     }
 
-    .nav-links.mobile {
+    .nav-links {
       position: fixed;
       top: 60px;
       right: -100%;
@@ -798,14 +870,49 @@
       transition: right 0.3s ease-in-out;
     }
 
-    .nav-links.mobile.open {
+    .nav-links.open {
       right: 0;
+      width: 30%;
     }
 
-    .nav-links.mobile li {
-      margin: 1rem 0;
+    .nav-links li {
+      /*margin: 1rem 0;*/
+      padding-right: 10%;
+    }
+
+    .menu-integration{
+      width: 90%;
+      margin: 0 auto;
     }
   }
+
+  /* Animações para o menu */
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }    
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  .nav-links {
+    animation: slideOut 0.3s ease-in-out forwards;
+  }
+
+  .nav-links.open {
+    animation: slideIn 0.3s ease-in-out forwards;
+  }
+
   
   /* 11. Animations */
   @keyframes fadeIn {
@@ -833,6 +940,71 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+
+  /* 12. Responsive Design */
+  @media (max-width: 768px){
+    .skills-grid,
+    .explore-grid,
+    .works-grid,
+    .about-grid,
+    .contact-grid,
+    .project-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-item.extra-wide {
+      grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  
+    .hero {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .skills-grid,
+    .explore-grid,
+    .works-grid,
+    .about-grid,
+    .contact-grid,
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .about-content,
+    .contact-content,
+    .project-content {
+      grid-template-columns: 1fr;
+    }
+  
+    .footer-content {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .works,
+    .about,
+    .contact,
+    .project-detail {
+      padding: 3rem 1rem 1rem;
+    }
+  }
+
 
 /* Classe 1: text-4xl md:text-6xl font-bold mb-8 */
 .text-4xl {
@@ -907,4 +1079,6 @@
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
+  
+
   

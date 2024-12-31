@@ -4,9 +4,11 @@ import {motion} from 'framer-motion';
 
 const works = [
   { id: 1, title: 'Project 1', description: 'A brief description of Project 1' },
+  /*
   { id: 2, title: 'Project 2', description: 'A brief description of Project 2' },
   { id: 3, title: 'Project 3', description: 'A brief description of Project 3' },
   { id: 4, title: 'Project 4', description: 'A brief description of Project 4' },
+  */
 ];
 
 const Works: React.FC = () => {
@@ -32,6 +34,14 @@ const Works: React.FC = () => {
               <p>{work.description}</p>
             </Link>
           ))}
+
+          <div className="works-grid"> 
+            <div className="work-item promise">
+              <h2>Novos Trabalhos em construção</h2>
+              <p>Logo, logo estarei atualizando</p>
+            </div>
+          </div>
+
         </div>
       </motion.div>
     </div>

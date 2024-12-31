@@ -15,9 +15,9 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <div className="project-detail fade-in">
+      <Link to="/portfolio/works" className="back-link">← Voltar</Link>
       <div className='project-grid'>
         <div className='project-item'>
-          <Link to="/portfolio/works" className="back-link">← Voltar</Link>
           <h1>{project.title}</h1>
           <div className="project-content">
             <div className="project-image">

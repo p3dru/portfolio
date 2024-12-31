@@ -1,9 +1,33 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import img from '../assets/R.jpg';
+import img1 from '../assets/img_1.jpeg';
+import img2 from '../assets/img_2.jpeg';
+import AnimatedCanvas from '../components/animatedCanvas';
 
 const Home: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Se a largura for menor que 768px, define como true
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Chama a função ao carregar e redimensionar a janela
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    // Limpeza do event listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   
+  const images = [
+    img1, img2
+  ];
+
+  const selectedImage = images[Math.floor(Math.random() * images.length)];
   /*
   const sectionRefs = useMemo(() => [
     useRef<HTMLElement>(null),
@@ -50,46 +74,53 @@ const Home: React.FC = () => {
     <div className="home">
       <section ref={sectionRefs[0]} className="hero section" data-snap-point>
         <div className="hero-content">
-          <h1>Desenvolvedor Fullstack... +</h1>
+          <h1 className='julius-sans-one-regular'>João 'p3drü' Pedro</h1>
+          <h2>Desenvolvedor FullStack... +</h2>
           <p>Gosto de regar e alimentar ideias afim de as tornarem inovadoras, impactantes, viáveis e principalmente: úteis</p>
         </div>
         <div className="hero-image">
-          <img src={img} alt="Developer" />
+          <img src={selectedImage} alt="Developer" />
         </div>
       </section>
 
       <section ref={sectionRefs[1]} className="skills section" data-snap-point>
         <h2>Skills Principais</h2>
         <div className="skills-grid">
-          <div className="skill-item wide">
-            <h3>Fullstack</h3>
+
+          <div className="skill-item">
+            <h3>Backend</h3>
             <p>
-             FastAPI | NestJS | React | JWT | PostgreSQL | TypeORM | SQLAlchemy
+            FastAPI | Express | NestJS |
+             PostgreSQL 
             </p>
           </div>
+
           <div className="skill-item">
             <h3>Frontend</h3>
             <p>
               React | HTML5 | CSS3 
             </p>
           </div>
-          <div className="skill-item">
-            <h3>Backend</h3>
-            <p>
-            FastAPI | Express | GraphQL 
-            | Swagger |
-             PostgreSQL 
-            </p>
-          </div>
-          <div className='skill-item'>
-            <></>
-          </div>
+
           <div className="skill-item">
             <h3>I.A & M.L</h3>
             <p>
-              Tensorflow | YOLO | Pandas | Numpy | Orange 
+              Tensorflow | YOLO | Pandas  
             </p>
           </div>
+
+          {/*
+          <div className='skill-item'>
+            <></>
+          </div>
+          */}
+          
+          {!isMobile && (
+            <div className="skill-item wide line-animation">
+              <AnimatedCanvas/>
+            </div>
+          )}
+          
         </div>
       </section>
 
