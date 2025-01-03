@@ -136,9 +136,9 @@ const About: React.FC = () => {
             transition={{delay: 0.6}}>
               <h2 className="text-2xl font-semibold mb-4">Outros Passos No Momento...</h2>
               <ul className="list-disc list-inside text-neutral-600 space-y-2">
-                <li><strong>Aprendizado Contínuo:</strong> Estou estudando as linguagens C e C++ com foco em aplicações para sistemas embarcados. Paralelamente, aprofundo meus conhecimentos em ciência de dados, análise de dados e inteligência artificial, explorando suas aplicações práticas em diferentes contextos.</li>
+                <li><strong>Aprendizado Contínuo:</strong> Estudando as linguagens C e C++ com foco em aplicações para sistemas embarcados. Paralelamente, aprofundo meus conhecimentos em ciência de dados, análise de dados e inteligência artificial, explorando suas aplicações práticas em diferentes contextos.</li>
                 <li><strong>Participação em Programas de Startups:</strong> Participo de um programa de fomento à startups inovadoras, onde lidero uma equipe enxuta, desenvolvendo soluções tecnológicas com potencial de impacto no mercado.</li>
-                <li><strong>Projetos Acadêmicos e Profissionais:</strong> Estou desenvolvendo soluções modulares que integram aplicações web com modelos de inteligência artificial, além de implementar sistemas voltados para otimizar a operação de pequenas empresas e estabelecimentos.</li>
+                <li><strong>Projetos Acadêmicos e Profissionais:</strong> Desenvolvendo soluções modulares que integram aplicações web com modelos de inteligência artificial, além de implementar sistemas voltados para otimizar a operação de pequenas empresas e estabelecimentos.</li>
               </ul>
           </motion.div>
         </div>
