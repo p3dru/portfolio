@@ -25,7 +25,7 @@
     --secondary-color: #7C34EB;
     --tertiary-color: #EBAEA9;
     --text-color: #333;
-    --background-color: #fff;
+    --background-color: rgb(248, 237, 237);
   }
   
   body {
@@ -156,7 +156,7 @@
     right: 0;
     z-index: 1000;
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(248, 237, 237, 0.9);
   }
   
   .nav {
