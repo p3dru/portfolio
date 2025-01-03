@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {motion} from 'framer-motion';
 
 const works = [
-  { id: 1, title: 'Project 1', description: 'A brief description of Project 1' },
+  { id: 1, title: '', description: '' },
   /*
   { id: 2, title: 'Project 2', description: 'A brief description of Project 2' },
   { id: 3, title: 'Project 3', description: 'A brief description of Project 3' },
@@ -25,7 +25,7 @@ const Works: React.FC = () => {
         animate={{opacity: 1, y: 0}}
         transition={{delay:0.6}}>
         <div className="works-grid">
-          {works.map((work, index) => (    
+          {/*works.map((work, index) => (    
             <Link key={work.id} to={`/portfolio/project/${work.id}`} className="work-item" style={{animationDelay: `${index * 0.1}s`}}>
               <div className="work-image">
                 <img src={`/placeholder.svg?height=400&width=600`} alt={work.title} />
@@ -33,12 +33,12 @@ const Works: React.FC = () => {
               <h2>{work.title}</h2>
               <p>{work.description}</p>
             </Link>
-          ))}
+          ))*/}
 
           <div className="works-grid"> 
             <div className="work-item promise">
               <h2>Novos Trabalhos em construção</h2>
-              <p>Logo, logo estarei atualizando</p>
+              <p>Logo, logo atualizarei</p>
             </div>
           </div>
 
